@@ -38,6 +38,11 @@ const config: Config = {
         backgroundHome: "#161513",
         backgroundWhite: "#FFFFFF ",
         black: "#000000",
+        Footer: "#191919",
+        orange: {
+          orangeOne: "#FF8660",
+          orangeTwo: "#D5491D",
+        },
         primary: {
           yellowOne: "#FFF1E0",
           yellowSix: "#DB9B10",
@@ -50,10 +55,13 @@ const config: Config = {
           grayFive: "#848FAC",
           graySix: "#606D93",
           graySeven: "#C5C5C5",
+          grayEight: "#2A2A2A",
         },
         blue: {
           blueFour: "#649DFB",
           blueFive: "#3276FA",
+          blueSix: "#5BADFF",
+          blueSeven: "#1373D1",
         },
         blueLogo: "#649DFB",
       },
