@@ -7,7 +7,7 @@ export const styles = {
   TitleMark:
     "bg-gradient-to-r from-blue-blueSix to-blue-blueSeven bg-clip-text text-transparent",
   ContainerExperience:
-    "w-1/2 mt-[50px] flex flex-row items-center pl-[5px] justify-between",
+    "w-[70%] md:w-1/2 mt-[50px] flex flex-row items-center pl-[5px] justify-between",
   Logo: "pr-5",
   ContainerText:
     "w-full flex flex-col md:flex-row justify-between md:items-center",

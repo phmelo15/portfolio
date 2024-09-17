@@ -7,7 +7,7 @@ import { styles } from "./styles";
 
 export default function Experience() {
   return (
-    <div className={styles.Container}>
+    <div className={styles.Container} id="experience">
       <text className={styles.Title}>
         <strong className={styles.TitleMark}>EXPERIÊNCIA</strong>
       </text>

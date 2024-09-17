@@ -2,12 +2,24 @@
 
 import { Images } from "@/constants/Images"; // Seu arquivo de imagens
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { FaCircleArrowLeft } from "react-icons/fa6";
+import { FaArrowCircleRight } from "react-icons/fa";
 
-const Carousel = () => {
+interface ICarrousel {
+  imagesArray: string[];
+}
+
+const Carousel = ({ imagesArray }: ICarrousel) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [stop, setStop] = useState<boolean>(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const imagesArray = [Images.dogPlanCard, Images.sipolattiLogo];
+  // const imagesArray = [
+  //   Images.dogPlanCard,
+  //   Images.sipolattiLogo,
+  //   Images.PraticoRT,
+  // ];
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -25,14 +37,38 @@ const Carousel = () => {
   //   const interval = setInterval(() => {
   //     nextSlide();
   //   }, 7000);
+  //   if (stop) {
+  //     return () => clearInterval(interval);
+  //   }
   //   return () => clearInterval(interval);
   // }, []);
+
+  useEffect(() => {
+    if (!stop) {
+      intervalRef.current = setInterval(() => {
+        nextSlide();
+      }, 7000);
+    }
+
+    // Limpa o intervalo quando o componente é desmontado ou se o estado "stop" mudar
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [stop]);
 
   return (
     <div className="relative w-full max-w-lg mx-auto">
       <div className="flex justify-center items-center">
-        <button onClick={prevSlide} className="absolute left-0 p-2">
-          &#8592;
+        <button
+          onClick={() => {
+            prevSlide();
+            setStop(true);
+          }}
+          className="absolute left-0 p-2"
+        >
+          <FaCircleArrowLeft color="rgba(255,255,255,0.1)" />
         </button>
 
         <div className="overflow-hidden w-full">
@@ -40,13 +76,19 @@ const Carousel = () => {
             src={imagesArray[currentIndex]}
             alt={`Slide ${currentIndex}`}
             className="rounded-t-[18px] h-[200px]"
-            width={600}
+            // width={600}
             height={400}
           />
         </div>
 
-        <button onClick={nextSlide} className="absolute right-0 p-2">
-          &#8594;
+        <button
+          onClick={() => {
+            nextSlide();
+            setStop(true);
+          }}
+          className="absolute right-0 p-2"
+        >
+          <FaArrowCircleRight color="rgba(255,255,255,0.1)" />
         </button>
       </div>
 

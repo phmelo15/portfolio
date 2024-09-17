@@ -8,18 +8,19 @@ import { RiShareBoxLine } from "react-icons/ri";
 
 interface ICarrouselCard {
   name: string;
+  imagesArray: string[];
 }
 
-export default function CarrouselCard({ name }: ICarrouselCard) {
+export default function CarrouselCard({ name, imagesArray }: ICarrouselCard) {
   return (
     <div className={styles.Container}>
-      <Carrousel />
+      <Carrousel imagesArray={imagesArray} />
       <button className={styles.DescContainer}>
         <div className="flex flex-col">
           <text
-            className={`text-[9px] ${strongFontFamily.variable} font-strong font-bold text-secundary-graySeven`}
+            className={`text-[9px] font-strong font-bold text-secundary-graySeven`}
           >
-            CLIQUE AQUI VER DETALHES
+            CLIQUE PARA VER DETALHES
           </text>
           <text className="text-[16px]">{name}</text>
         </div>
