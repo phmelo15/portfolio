@@ -5,7 +5,7 @@ import { styles } from "./styles";
 
 export default function AboutMe() {
   return (
-    <div className={styles.Container}>
+    <section className={styles.Container}>
       <div className={styles.ContainerPhoto}>
         <Image
           src={Images.profilePic}
@@ -37,6 +37,6 @@ export default function AboutMe() {
         <text className={styles.TitleTec}>TECNOLOGIAS</text>
         <Technologies />
       </div>
-    </div>
+    </section>
   );
 }

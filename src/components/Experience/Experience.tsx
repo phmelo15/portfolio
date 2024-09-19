@@ -7,7 +7,7 @@ import { styles } from "./styles";
 
 export default function Experience() {
   return (
-    <div className={styles.Container} id="experience">
+    <section className={styles.Container} id="experience">
       <text className={styles.Title}>
         <strong className={styles.TitleMark}>EXPERIÊNCIA</strong>
       </text>
@@ -67,6 +67,6 @@ export default function Experience() {
           <text className={styles.Date}>07/2021 - Data atual</text>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

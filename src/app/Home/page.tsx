@@ -9,13 +9,11 @@ import { styles } from "./styles";
 export default function page() {
   return (
     <div className={styles.Container}>
-      <Header />
       <div className={styles.MainContent}>
         <AboutMe />
         <Projects />
         <Experience />
       </div>
-      <Footer />
     </div>
   );
 }

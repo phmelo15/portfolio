@@ -75,8 +75,8 @@ const Carousel = ({ imagesArray }: ICarrousel) => {
           <Image
             src={imagesArray[currentIndex]}
             alt={`Slide ${currentIndex}`}
-            className="rounded-t-[18px] h-[200px]"
-            // width={600}
+            className="rounded-t-[18px]"
+            width={600}
             height={400}
           />
         </div>

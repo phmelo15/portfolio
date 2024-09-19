@@ -4,10 +4,15 @@ import React, { useEffect, useState } from "react";
 import { styles } from "./styles";
 import Image from "next/image";
 import { Images } from "@/constants/Images";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { IoIosReturnLeft } from "react-icons/io";
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const pathname = usePathname();
+  const router = useRouter();
 
   const controlHeader = () => {
     if (typeof window !== "undefined") {
@@ -35,6 +40,10 @@ export default function Header() {
     }
   }, [lastScrollY]);
 
+  useEffect(() => {
+    console.log(pathname);
+  }, []);
+
   return (
     <header
       className={`w-full h-[80px] bg-Nav flex items-center justify-center fixed top-0 shadow-md transition-transform duration-300 z-50 ${
@@ -42,24 +51,37 @@ export default function Header() {
       }`}
     >
       <nav className={styles.Nav}>
-        <div className={styles.Signature}>
+        <button
+          className={styles.Signature}
+          onClick={() => console.log(pathname)}
+        >
           <Image
             src={Images.Assignature}
             alt="my photo"
             className="w-[150px]"
           />
-        </div>
-        <ul className="w-full md:w-1/2 flex flex-row justify-between items-center">
-          <li>
-            <a href="#about-me">Sobre mim</a>
-          </li>
-          <li>
-            <a href="#projects">Projetos</a>
-          </li>
-          <li>
-            <a href="#experience">Experiência</a>
-          </li>
-        </ul>
+        </button>
+        {pathname === "/ProjectDetails" ? (
+          <button
+            className="text-white flex flex-row items-center"
+            onClick={() => router.back()} // Função que volta para a página anterior
+          >
+            <IoIosReturnLeft size={22} />
+            <text className="ml-[10px]">Voltar</text>
+          </button>
+        ) : (
+          <ul className="w-full md:w-1/2 flex flex-row justify-between items-center">
+            <li>
+              <a href="#about-me">Sobre mim</a>
+            </li>
+            <li>
+              <a href="#projects">Projetos</a>
+            </li>
+            <li>
+              <a href="#experience">Experiência</a>
+            </li>
+          </ul>
+        )}
       </nav>
     </header>
   );
