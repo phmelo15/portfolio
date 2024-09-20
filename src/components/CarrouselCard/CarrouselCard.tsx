@@ -34,7 +34,7 @@ export default function CarrouselCard({
           </text>
           <text className="text-[16px] text-white">{name}</text>
         </div>
-        <RiShareBoxLine />
+        <RiShareBoxLine color="white" />
       </button>
     </div>
   );

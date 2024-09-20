@@ -36,8 +36,10 @@ export default function ProjectDetailsContent() {
 
   return (
     <div className="flex flex-col min-h-screen px-[50px] pt-[150px]">
-      <h1 className="text-[18px]">{title}</h1>
-      <p className="text-[14px] my-[40px] mb-[80px]">{projectDesc}</p>
+      <h1 className="text-[18px] text-white">{title}</h1>
+      <p className="text-[14px] my-[40px] mb-[80px] text-white">
+        {projectDesc}
+      </p>
       <div className="mb-[100px]">
         {title && returnImage[title] ? (
           <Carrousel imagesArray={returnImage[title]} />

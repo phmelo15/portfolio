@@ -9,6 +9,7 @@ export default function Footer() {
         Pedro Henrique Melo Tavares{" "}
       </text>
       <FaRegCopyright
+        color="white"
         style={{
           marginRight: 3,
           marginLeft: 3,
