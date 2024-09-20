@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 
@@ -14,11 +14,11 @@ const Carousel = ({ imagesArray }: ICarrousel) => {
   const [stop, setStop] = useState<boolean>(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, []);
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { styles } from "./styles";
 import Image from "next/image";
 import { Images } from "@/constants/Images";
@@ -14,7 +14,7 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const controlHeader = () => {
+  const controlHeader = useCallback(() => {
     if (typeof window !== "undefined") {
       if (window.scrollY === 0) {
         setIsVisible(true);
@@ -25,7 +25,7 @@ export default function Header() {
       }
       setLastScrollY(window.scrollY);
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {

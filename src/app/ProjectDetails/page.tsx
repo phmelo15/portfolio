@@ -12,12 +12,20 @@ import {
   VaptImages,
 } from "@/constants/ImagesList";
 
+type ProjectTitles =
+  | "Prático RT"
+  | "Cidadania GV"
+  | "Sipolatti Vendedor"
+  | "Dog Plan"
+  | "MedSempre"
+  | "Vapt";
+
 export default function ProjectDetails() {
   const searchParams = useSearchParams();
-  const title = searchParams.get("title");
+  const title = searchParams.get("title") as ProjectTitles | null;
   const projectDesc = searchParams.get("projectDesc");
 
-  const returnImage = {
+  const returnImage: Record<ProjectTitles, any[]> = {
     "Prático RT": praticoImages,
     "Cidadania GV": GvImages,
     "Sipolatti Vendedor": SipoImages,
@@ -28,10 +36,14 @@ export default function ProjectDetails() {
 
   return (
     <div className="flex flex-col min-h-screen px-[50px] pt-[150px]">
-      <text className="text-[18px]">{title}</text>
-      <text className="text-[14px] my-[40px] mb-[80px]">{projectDesc}</text>
+      <h1 className="text-[18px]">{title}</h1>
+      <p className="text-[14px] my-[40px] mb-[80px]">{projectDesc}</p>
       <div className="mb-[100px]">
-        <Carrousel imagesArray={returnImage[title]} />
+        {title && returnImage[title] ? (
+          <Carrousel imagesArray={returnImage[title]} />
+        ) : (
+          <p>Nenhuma imagem disponível para este projeto.</p>
+        )}
       </div>
     </div>
   );
