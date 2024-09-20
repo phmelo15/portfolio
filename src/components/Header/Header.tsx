@@ -25,7 +25,7 @@ export default function Header() {
       }
       setLastScrollY(window.scrollY);
     }
-  }, []);
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {

@@ -18,7 +18,7 @@ const Carousel = ({ imagesArray }: ICarrousel) => {
     setCurrentIndex((prevIndex) =>
       prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1
     );
-  }, []);
+  }, [imagesArray.length]);
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
