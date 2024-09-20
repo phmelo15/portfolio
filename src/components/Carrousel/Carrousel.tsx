@@ -1,10 +1,9 @@
 "use client";
 
-import { Images } from "@/constants/Images"; // Seu arquivo de imagens
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { FaCircleArrowLeft } from "react-icons/fa6";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { FaCircleArrowLeft } from "react-icons/fa6";
 
 interface ICarrousel {
   imagesArray: string[];
@@ -14,12 +13,6 @@ const Carousel = ({ imagesArray }: ICarrousel) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [stop, setStop] = useState<boolean>(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  // const imagesArray = [
-  //   Images.dogPlanCard,
-  //   Images.sipolattiLogo,
-  //   Images.PraticoRT,
-  // ];
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -33,16 +26,6 @@ const Carousel = ({ imagesArray }: ICarrousel) => {
     );
   };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     nextSlide();
-  //   }, 7000);
-  //   if (stop) {
-  //     return () => clearInterval(interval);
-  //   }
-  //   return () => clearInterval(interval);
-  // }, []);
-
   useEffect(() => {
     if (!stop) {
       intervalRef.current = setInterval(() => {
@@ -50,7 +33,6 @@ const Carousel = ({ imagesArray }: ICarrousel) => {
       }, 7000);
     }
 
-    // Limpa o intervalo quando o componente é desmontado ou se o estado "stop" mudar
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -91,18 +73,6 @@ const Carousel = ({ imagesArray }: ICarrousel) => {
           <FaArrowCircleRight color="rgba(255,255,255,0.1)" />
         </button>
       </div>
-
-      {/* <div className="absolute flex justify-center mt-4 space-x-2">
-        {imagesArray.map((_, index) => (
-          <button
-            key={index}
-            className={`w-3 h-3 rounded-full ${
-              index === currentIndex ? "bg-blue-500" : "bg-gray-300"
-            }`}
-            onClick={() => setCurrentIndex(index)}
-          ></button>
-        ))}
-      </div> */}
     </div>
   );
 };
