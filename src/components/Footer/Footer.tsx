@@ -5,7 +5,7 @@ import { FaRegCopyright } from "react-icons/fa";
 export default function Footer() {
   return (
     <div className={styles.Container}>
-      <text className="pl-[100px] text-[11px]">
+      <text className="pl-[100px] text-[11px] text-white">
         Pedro Henrique Melo Tavares{" "}
       </text>
       <FaRegCopyright
@@ -14,7 +14,7 @@ export default function Footer() {
           marginLeft: 3,
         }}
       />
-      <text className="text-[11px]"> 2024</text>
+      <text className="text-[11px] text-white"> 2024</text>
     </div>
   );
 }

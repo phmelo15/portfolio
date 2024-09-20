@@ -32,7 +32,7 @@ export default function CarrouselCard({
           >
             CLIQUE PARA VER DETALHES
           </text>
-          <text className="text-[16px]">{name}</text>
+          <text className="text-[16px] text-white">{name}</text>
         </div>
         <RiShareBoxLine />
       </button>

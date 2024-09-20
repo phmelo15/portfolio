@@ -12,10 +12,10 @@ export default function AboutMe() {
           alt="my photo"
           className={styles.Photo}
         />
-        <text className="mt-[20px] text-[12px]">
+        <text className="mt-[20px] text-[12px] text-white">
           Pedro Henrique Melo Tavares
         </text>
-        <text className="mt-[2px] text-[12px]" id="about-me">
+        <text className="mt-[2px] text-[12px] text-white" id="about-me">
           Desenvolvedor Full-Stack
         </text>
         <text className={styles.Presentation}>

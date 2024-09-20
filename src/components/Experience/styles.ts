@@ -11,6 +11,6 @@ export const styles = {
   Logo: "pr-5",
   ContainerText:
     "w-full flex flex-col md:flex-row justify-between md:items-center",
-  Cargo: "font-bold",
-  Date: "text-[11px] mt-3 md:mt-0",
+  Cargo: "font-bold text-white",
+  Date: "text-[11px] mt-3 md:mt-0 text-white",
 };

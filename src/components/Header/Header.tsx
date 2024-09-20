@@ -65,13 +65,19 @@ export default function Header() {
         ) : (
           <ul className="w-full md:w-1/2 flex flex-row justify-between items-center">
             <li>
-              <a href="#about-me">Sobre mim</a>
+              <a href="#about-me" className="text-white">
+                Sobre mim
+              </a>
             </li>
             <li>
-              <a href="#projects">Projetos</a>
+              <a href="#projects" className="text-white">
+                Projetos
+              </a>
             </li>
             <li>
-              <a href="#experience">Experiência</a>
+              <a href="#experience" className="text-white">
+                Experiência
+              </a>
             </li>
           </ul>
         )}
