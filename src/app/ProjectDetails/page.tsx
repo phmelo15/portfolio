@@ -12,7 +12,7 @@ import {
   VaptImages,
 } from "@/constants/ImagesList";
 
-export default function page() {
+export default function ProjectDetails() {
   const searchParams = useSearchParams();
   const title = searchParams.get("title");
   const projectDesc = searchParams.get("projectDesc");
