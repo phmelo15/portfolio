@@ -25,7 +25,7 @@ export default function ProjectDetails() {
   const title = searchParams.get("title") as ProjectTitles | null;
   const projectDesc = searchParams.get("projectDesc");
 
-  const returnImage: Record<ProjectTitles, any[]> = {
+  const returnImage: Record<ProjectTitles, string[]> = {
     "Prático RT": praticoImages,
     "Cidadania GV": GvImages,
     "Sipolatti Vendedor": SipoImages,
