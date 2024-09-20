@@ -17,13 +17,10 @@ export default function Header() {
   const controlHeader = () => {
     if (typeof window !== "undefined") {
       if (window.scrollY === 0) {
-        // Se o scrollY é 0, o usuário está no topo, então o header deve ser mostrado
         setIsVisible(true);
       } else if (window.scrollY > lastScrollY) {
-        // Se estiver rolando para baixo, esconda o header
         setIsVisible(false);
       } else {
-        // Se estiver rolando para cima, mostre o header
         setIsVisible(true);
       }
       setLastScrollY(window.scrollY);
@@ -38,11 +35,7 @@ export default function Header() {
         window.removeEventListener("scroll", controlHeader);
       };
     }
-  }, [lastScrollY]);
-
-  useEffect(() => {
-    console.log(pathname);
-  }, []);
+  }, [lastScrollY, controlHeader]);
 
   return (
     <header
@@ -64,7 +57,7 @@ export default function Header() {
         {pathname === "/ProjectDetails" ? (
           <button
             className="text-white flex flex-row items-center"
-            onClick={() => router.back()} // Função que volta para a página anterior
+            onClick={() => router.back()}
           >
             <IoIosReturnLeft size={22} />
             <text className="ml-[10px]">Voltar</text>

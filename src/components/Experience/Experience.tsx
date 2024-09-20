@@ -1,7 +1,5 @@
-import { strongFontFamily } from "@/app/layout";
-import React from "react";
-import Image from "next/image";
 import { Images } from "@/constants/Images";
+import Image from "next/image";
 import { FaLaptopCode } from "react-icons/fa";
 import { styles } from "./styles";
 

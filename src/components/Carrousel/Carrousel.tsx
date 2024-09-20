@@ -38,7 +38,7 @@ const Carousel = ({ imagesArray }: ICarrousel) => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [stop]);
+  }, [stop, nextSlide]);
 
   return (
     <div className="relative w-full max-w-lg mx-auto">
