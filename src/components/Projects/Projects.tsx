@@ -32,30 +32,18 @@ export default function Projects() {
       </text>
       <div className="flex flex-col lg:flex-row w-[44%] gap-[12px] my-[30px] items-center justify-center">
         <CarrouselCard
-          name="Prático RT"
-          imagesArray={praticoImages}
-          projectDetailsText={ProjectDetailsText.PraticoRT}
+          name="Dog Plan"
+          imagesArray={DogImages}
+          projectDetailsText={ProjectDetailsText.DogPlan}
         />
         <CarrouselCard
-          name="Cidadania GV"
-          imagesArray={GvImages}
-          projectDetailsText={ProjectDetailsText.CidadaniaGV}
+          name="Sipolatti Vendedor"
+          imagesArray={SipoImages}
+          projectDetailsText={ProjectDetailsText.Sipolatti}
         />
       </div>
       {showDetails && (
         <>
-          <div className="flex flex-col lg:flex-row w-[44%] gap-[12px] mb-[30px] items-center justify-center">
-            <CarrouselCard
-              name="Sipolatti"
-              imagesArray={SipoImages}
-              projectDetailsText={ProjectDetailsText.Sipolatti}
-            />
-            <CarrouselCard
-              name="Dog Plan"
-              imagesArray={DogImages}
-              projectDetailsText={ProjectDetailsText.DogPlan}
-            />
-          </div>
           <div className="flex flex-col lg:flex-row w-[44%] gap-[12px] mb-[30px] items-center justify-center">
             <CarrouselCard
               name="MedSempre"
@@ -63,9 +51,21 @@ export default function Projects() {
               projectDetailsText={ProjectDetailsText.MedSempre}
             />
             <CarrouselCard
+              name="Cidadania GV"
+              imagesArray={GvImages}
+              projectDetailsText={ProjectDetailsText.CidadaniaGV}
+            />
+          </div>
+          <div className="flex flex-col lg:flex-row w-[44%] gap-[12px] mb-[30px] items-center justify-center">
+            <CarrouselCard
               name="Vapt"
               imagesArray={VaptImages}
               projectDetailsText={ProjectDetailsText.Vapt}
+            />
+            <CarrouselCard
+              name="Prático RT"
+              imagesArray={praticoImages}
+              projectDetailsText={ProjectDetailsText.PraticoRT}
             />
           </div>
         </>

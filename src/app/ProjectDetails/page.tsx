@@ -20,7 +20,7 @@ export default function page() {
   const returnImage = {
     "Prático RT": praticoImages,
     "Cidadania GV": GvImages,
-    Sipolatti: SipoImages,
+    "Sipolatti Vendedor": SipoImages,
     "Dog Plan": DogImages,
     MedSempre: MedImages,
     Vapt: VaptImages,
@@ -30,7 +30,7 @@ export default function page() {
     <div className="flex flex-col min-h-screen px-[50px] pt-[150px]">
       <text className="text-[18px]">{title}</text>
       <text className="text-[14px] my-[40px] mb-[80px]">{projectDesc}</text>
-      <div className=" mb-[100px]">
+      <div className="mb-[100px]">
         <Carrousel imagesArray={returnImage[title]} />
       </div>
     </div>
