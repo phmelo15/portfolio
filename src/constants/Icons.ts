@@ -5,4 +5,6 @@ export const Icons = {
   Html: require("../assets/icons/html.png"),
   Nodejs: require("../assets/icons/nodejs.png"),
   React: require("../assets/icons/reactjs.png"),
+  playStore: require("../assets/icons/playStore.webp"),
+  appStore: require("../assets/icons/appStore.png"),
 };
