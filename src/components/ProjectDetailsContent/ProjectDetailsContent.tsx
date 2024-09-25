@@ -1,18 +1,17 @@
 "use client";
 
-import React from "react";
-import { useSearchParams } from "next/navigation";
 import Carrousel from "@/components/Carrousel/Carrousel";
+import { Icons } from "@/constants/Icons";
 import {
-  GvImages,
-  praticoImages,
   DogImages,
+  GvImages,
   MedImages,
   SipoImages,
   VaptImages,
+  praticoImages,
 } from "@/constants/ImagesList";
 import Image from "next/image";
-import { Icons } from "@/constants/Icons";
+import { useSearchParams } from "next/navigation";
 
 type ProjectTitles =
   | "Prático RT"
